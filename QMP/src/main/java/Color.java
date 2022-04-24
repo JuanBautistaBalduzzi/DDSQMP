@@ -1,10 +1,6 @@
 public class Color {
-    Integer rojo;
-    Integer verde;
-    Integer azul;
+  private Integer rojo;
+  private Integer verde;
+  private Integer azul;
 
-    public String colorResultante(){
-        String color= new String();
-        return color;
-    }
 }

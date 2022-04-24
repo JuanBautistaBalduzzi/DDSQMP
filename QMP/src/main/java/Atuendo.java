@@ -1,5 +1,8 @@
 import java.util.List;
 
 public class Atuendo {
-    public List<Prenda> prendas;
+  private List<Prenda> prendasSuperiores;
+  private List<Prenda> prendasInferiores;
+  private List<Prenda> prendasCalzados;
+  private List<Prenda> prendasAccesorios;
 }
