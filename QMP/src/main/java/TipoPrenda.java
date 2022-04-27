@@ -5,13 +5,37 @@ public enum TipoPrenda {
       return Categoria.PARTE_SUPERIOR;
     }
   },
+  CHOMBA {
+    @Override
+    public Categoria getCategoria() {
+      return Categoria.PARTE_SUPERIOR;
+    }
+  },
+  CAMISA {
+    @Override
+    public Categoria getCategoria() {
+      return Categoria.PARTE_SUPERIOR;
+    }
+  },
   ZAPATILLA {
     @Override
     public Categoria getCategoria() {
       return Categoria.CALZADO;
     }
   },
+  ZAPATO {
+    @Override
+    public Categoria getCategoria() {
+      return Categoria.CALZADO;
+    }
+  },
   PANTALON {
+    @Override
+    public Categoria getCategoria() {
+      return Categoria.PARTE_INFERIOR;
+    }
+  },
+  SHORT {
     @Override
     public Categoria getCategoria() {
       return Categoria.PARTE_INFERIOR;
