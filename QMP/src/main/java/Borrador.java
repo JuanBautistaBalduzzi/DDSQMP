@@ -1,3 +1,5 @@
+import static java.util.Objects.requireNonNull;
+
 public class Borrador {
   private TipoPrenda tipoPrenda;
   private Color colorPrimario;
@@ -5,25 +7,29 @@ public class Borrador {
   private Material material;
   private Trama trama;
 
-  public void setTipoPrenda(TipoPrenda tipoPrenda) {
-    this.tipoPrenda = tipoPrenda;
+  Borrador(TipoPrenda tipoPrenda) {
+    this.tipoPrenda = requireNonNull(tipoPrenda, "El tipo de ls prenda no puede ser nulo");
+  }
+
+  public void setMaterial(Material material) {
+
+    this.material = requireNonNull(material, "La prenda debe tener un material");
   }
 
   public void setColorPrimario(Color colorPrimario) {
-    this.colorPrimario = colorPrimario;
+
+    this.colorPrimario = requireNonNull(colorPrimario,
+        "La prenda debe tener al menos un color primario");
   }
 
   public void setColorSecundario(Color colorSecundario) {
     this.colorSecundario = colorSecundario;
   }
 
-  public void setMaterial(Material material) {
-    this.material = material;
-  }
-
   public void setTrama(Trama trama) {
     this.trama = trama;
   }
+
   public Prenda generarPrenda() {
     return new Prenda(
         this.tipoPrenda,
