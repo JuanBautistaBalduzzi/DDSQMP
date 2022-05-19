@@ -8,10 +8,12 @@ public class EstadoDelClimaAccu implements CondicionesClimaticas {
   private LocalDate fechaDeExpiracion;
   private Integer tiempoDeExpiracion;
   private String ciudad;
+
   EstadoDelClimaAccu(String ciudad, Integer tiempoDeExpiracion) {
-    this.ciudad=ciudad;
-    this.tiempoDeExpiracion=tiempoDeExpiracion;
+    this.ciudad = ciudad;
+    this.tiempoDeExpiracion = tiempoDeExpiracion;
   }
+
   @Override
   public List<Map<String, Object>> getClima() {
     if (climaGuardado == null || this.expiroTiempo()) {
