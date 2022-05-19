@@ -6,9 +6,18 @@ public class Borrador {
   private Color colorSecundario;
   private Material material;
   private Trama trama;
+  private Integer temperatura;
 
-  Borrador(TipoPrenda tipoPrenda) {
-    this.tipoPrenda = requireNonNull(tipoPrenda, "El tipo de ls prenda no puede ser nulo");
+  public Borrador(TipoPrenda tipoPrenda) {
+    this.tipoPrenda=tipoPrenda;
+  }
+
+  public void setTipoPrenda(TipoPrenda tipoPrenda) {
+    this.tipoPrenda = tipoPrenda;
+  }
+
+  public void setTemperatura(Integer temperatura) {
+    this.temperatura = temperatura;
   }
 
   public void setMaterial(Material material) {
@@ -36,6 +45,7 @@ public class Borrador {
         this.colorPrimario,
         this.material,
         this.colorSecundario,
-        this.trama);
+        this.trama,
+        this.temperatura);
   }
 }
