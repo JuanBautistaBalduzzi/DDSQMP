@@ -2,31 +2,36 @@ import java.util.List;
 
 public class Sugeridor {
   private CondicionesClimaticas condicionesClimaticas;
-  private List<Prenda> guardarropa;
+  private GuardaRopas guardarropa;
 
-  Sugeridor(CondicionesClimaticas condicionesClimaticas, List<Prenda> guardarropa) {
+  Sugeridor(CondicionesClimaticas condicionesClimaticas, GuardaRopas guardarropa) {
     this.condicionesClimaticas = condicionesClimaticas;
     this.guardarropa = guardarropa;
   }
+
   public Atuendo sugerirAtuendo() {
-    Prenda prendaSuperior = guardarropa.stream()
+    Prenda prendaSuperior = guardarropa.getPrendas()
+        .stream()
         .filter(prenda -> prenda.categoria().equals(Categoria.PARTE_SUPERIOR))
         .filter(prenda -> prenda.aptaSegunTemperatura(condicionesClimaticas.getTemperatura()))
-        .findFirst().get();
-    Prenda prendaInferior = guardarropa.stream()
+        .findAny().get();
+    Prenda prendaInferior = guardarropa.getPrendas()
+        .stream()
         .filter(prenda -> prenda.categoria().equals(Categoria.PARTE_INFERIOR))
         .filter(prenda -> prenda.aptaSegunTemperatura(condicionesClimaticas.getTemperatura()))
-        .findFirst().get();
+        .findAny().get();
 
-    Prenda prendaCalzado = guardarropa.stream()
+    Prenda prendaCalzado = guardarropa.getPrendas()
+        .stream()
         .filter(prenda -> prenda.categoria().equals(Categoria.CALZADO))
         .filter(prenda -> prenda.aptaSegunTemperatura(condicionesClimaticas.getTemperatura()))
-        .findFirst().get();
+        .findAny().get();
 
-    Prenda prendaAccesorio = guardarropa.stream()
+    Prenda prendaAccesorio = guardarropa.getPrendas()
+        .stream()
         .filter(prenda -> prenda.categoria().equals(Categoria.ACCESORIO))
         .filter(prenda -> prenda.aptaSegunTemperatura(condicionesClimaticas.getTemperatura()))
-        .findFirst().get();
+        .findAny().get();
 
     return new Atuendo(prendaSuperior, prendaInferior, prendaAccesorio, prendaCalzado);
   }
