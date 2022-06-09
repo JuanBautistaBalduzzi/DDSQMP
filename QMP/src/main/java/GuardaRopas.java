@@ -27,7 +27,6 @@ public class GuardaRopas {
 
   public void rechazarSolicitud(SolicitudDeModificacion solicitudDeModificacion) {
     solicitudesPendientes.remove(solicitudDeModificacion);
-    solicitudDeModificacion.rechazar(this);
   }
 
   public void cancelarSolicitud(SolicitudDeModificacion solicitudDeModificacion) {

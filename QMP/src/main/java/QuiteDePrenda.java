@@ -8,11 +8,6 @@ public class QuiteDePrenda implements SolicitudDeModificacion {
   }
 
   @Override
-  public void rechazar(GuardaRopas guardaRopas) {
-    return;
-  }
-
-  @Override
   public void cancelar(GuardaRopas guardaRopas) {
     guardaRopas.getPrendas().add(prendaAQuitar);
   }
