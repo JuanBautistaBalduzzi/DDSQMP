@@ -2,6 +2,10 @@ import java.util.List;
 import java.util.Map;
 
 public interface CondicionesClimaticas {
-  public List<Map<String, Object>> getClima();
-  public Integer getTemperatura();
+
+   List<Map<String, Object>> getClima();
+
+   Integer getTemperatura();
+
+  List<AlertaClimatica> getAlertasActuales();
 }
